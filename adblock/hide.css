@@ -1,0 +1,38 @@
+body > div[style*="2147483000"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body > div:has(#eg-go) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#eg-go {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.dn-offer,
+.dn-offer.show {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+[data-dn-ad],
+[data-dn-adtg] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#dn-body .dn-box:has([data-dn-ad]),
+#dn-body .dn-box:has([data-dn-adtg]) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

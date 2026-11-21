@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Перекуп AdBlock",
+  "short_name": "Перекуп AdBlock",
+  "version": "1.0.0",
+  "description": "By @rddef.",
+  "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.adsgram.ai/*",
+    "*://adsgram.ai/*",
+    "*://*.adsgram.me/*",
+    "*://adsgram.me/*",
+    "*://*.adsgram.com/*",
+    "*://adsgram.com/*",
+    "*://mobilesell.ru/*",
+    "*://*.mobilesell.ru/*",
+    "*://localhost/*",
+    "*://127.0.0.1/*",
+    "file:///*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "adsgram",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*",
+        "https://mobilesell.ru/*",
+        "https://*.mobilesell.ru/*",
+        "http://mobilesell.ru/*",
+        "http://*.mobilesell.ru/*",
+        "https://localhost/*",
+        "https://127.0.0.1/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": ["content.js"],
+      "css": ["hide.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
